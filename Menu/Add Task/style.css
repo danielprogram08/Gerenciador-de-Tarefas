@@ -41,7 +41,7 @@ input::placeholder {
     opacity: 0.4;
 }
 
-#date, #time {
+#datetime {
     background: none;
     border: none;
     color: white;
@@ -50,16 +50,12 @@ input::placeholder {
     transition: background-color linear 0.2s;
 }
 
-#date:hover {
-    background-color: #0040ff;
-}
-
-#time:hover {
-    background-color: #0040ff;
+#datetime:hover {
+    background-color: #3ee3f9;
 }
 
 #description {
-    height: 150px;
+    height: 100px;
     width: 350px;
     border: none;
     border-radius: 10px;
