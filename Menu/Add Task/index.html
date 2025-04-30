@@ -16,7 +16,7 @@
     </header>
     <nav>
         <h1>Título da Tarefa</h1>
-        <input type="text" placeholder="Tarefa">
+        <input id="title" type="text" placeholder="Tarefa">
         <div>
             <h1>Prazo de Conclusão</h1>
             <input type="datetime-local" name="datetime" id="datetime">
@@ -25,7 +25,7 @@
         <textarea name="description" id="description"></textarea>
     </nav>
     <footer>
-        <button>
+        <button onclick="AddTask()">
             <img src="../../Icons/list_alt_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" alt="register">
             <p>Registrar</p>
         </button>
