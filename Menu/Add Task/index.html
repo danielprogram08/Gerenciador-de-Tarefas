@@ -11,25 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header id="header">
         <h1>Nova Tarefa</h1>
     </header>
     <nav>
         <h1>Título da Tarefa</h1>
-        <input id="title" type="text" placeholder="Tarefa">
+        <input id="title" type="text" placeholder="Tarefa" required>
         <div>
             <h1>Prazo de Conclusão</h1>
-            <input type="datetime-local" name="datetime" id="datetime">
+            <input type="datetime-local" name="datetime" id="datetime" required>
         </div>
         <h1>Descrição da Tarefa</h1>
         <textarea name="description" id="description"></textarea>
     </nav>
     <footer>
-        <button onclick="AddTask()">
+        <button id="btn-addTask" onclick="AddTask()">
             <img src="../../Icons/list_alt_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png" alt="register">
             <p>Registrar</p>
         </button>
-        <button onclick="Return()">
+        <button id="btn-return" onclick="Return()">
             <img src="../../Icons/keyboard_return_30dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="return">
             <p>Voltar</p>
         </button>
