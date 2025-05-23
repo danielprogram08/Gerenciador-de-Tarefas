@@ -16,7 +16,7 @@ function AddTask() {
             Description: description
         };
     
-        const json = JSON.stringify(task);
+        json = JSON.stringify(task);
     
         localStorage.setItem("Task", json);
         clear();
@@ -69,5 +69,3 @@ function CardAlert() {
         }, 2000);
     }, 3000);
 }
-
-window.Return = Return;
