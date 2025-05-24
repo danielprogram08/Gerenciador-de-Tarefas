@@ -91,7 +91,7 @@ button {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: background-color linear 0.3s;
+    transition: all linear 0.3s;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -107,12 +107,9 @@ p {
     font-size: medium;
 }
 
-#btn-return:hover {
+#btn-return:hover, #btn-addTask:hover {
     background-color: #3ee3f9;
-}
-
-#btn-addTask:hover {
-    background-color: #3ee3f9;
+    transform: scale(1.1);
 }
 
 @media (max-width: 400px) {
