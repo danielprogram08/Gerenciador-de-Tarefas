@@ -3,13 +3,17 @@ function ViewTask() {
 
     if (StringTask) {
         const Task = JSON.parse(StringTask);
+        const DateHour = Task.Term;
+        const parts = DateHour.split('T');
+        const date = parts[0];
+        const hour = parts[1];
         let task = document.createElement("div");
 
         task.className = "task";
         task.innerHTML = `
         <div class="titles">
             <h1>${Task.Title}</h1>
-            <h4>${Task.Term}</h4>
+            <h4>${"Data: " + date + "<br>Hora: " + hour}</h4>
             <h4>${Task.Description}</h4>
         </div>
         <div class="buttons">
