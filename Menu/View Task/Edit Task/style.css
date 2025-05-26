@@ -81,6 +81,7 @@ button {
     justify-content: center;
     display: flex;
     align-items: center;
+    transition: all linear 0.2s;
 }
 
 img {
@@ -95,6 +96,7 @@ p {
 
 button:hover {
     background-color: #3ee3f9;
+    transform: scale(1.1);
 }
 
 @media (min-width: 340px) and (max-width: 440px) {
