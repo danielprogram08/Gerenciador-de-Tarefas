@@ -12,7 +12,7 @@ function ViewTask() {
         const DateHour = new Date(date);
         const DateFormated = DateHour.toLocaleDateString('pt-br');
         
-        let task = document.createElement("div");
+        const task = document.createElement("div");
 
         task.className = "task";
         task.innerHTML = `
@@ -25,7 +25,7 @@ function ViewTask() {
             <button id="edit-button" onclick="EditTask()">
                 <img src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
             </button>
-            <button id="delete-button">
+            <button id="delete-button" onclick="DeleteTask()">
                 <img src="../../Icons/delete_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
             </button>
         </div>`;
@@ -38,8 +38,34 @@ function ViewTask() {
 }
 ViewTask();
 
+const ButtonReturn = document.createElement("div");
+
+    ButtonReturn.className = "Btn-return";
+    ButtonReturn.innerHTML = `
+        <button id="btn-return" onclick="Return()">↩︎</button>`;
+
+document.body.appendChild(ButtonReturn);
+
 function EditTask() {
     window.location.href = './Edit Task/index.html';
 }
 
 window.EditTask = EditTask;
+
+function DeleteTask() {
+    const StringTask = localStorage.getItem("Task");
+    if (StringTask) {
+        localStorage.removeItem("Task");
+        location.reload();
+    } else {
+        console.error("Erro ao buscar tarefa!");
+    }
+}
+
+window.DeleteTask = DeleteTask;
+
+function Return () {
+    window.location.href = '../index.html';
+}
+
+window.Return = Return;
