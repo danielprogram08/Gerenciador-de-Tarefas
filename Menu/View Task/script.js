@@ -17,9 +17,9 @@ function ViewTask() {
         task.className = "task";
         task.innerHTML = `
         <div class="titles">
-            <h1>${Task.Title}</h1>
-            <h4>${"Data: " + DateFormated + "<br>Hora: " + hour}</h4>
-            <h4>${Task.Description}</h4>
+            <h1 id="task-title">${Task.Title}</h1>
+            <h4 id="task-date-hour">${"Data: " + DateFormated + "<br>Hora: " + hour}</h4>
+            <h4 id="task-description">${Task.Description}</h4>
         </div>
         <div class="buttons">
             <button id="edit-button" onclick="EditTask()">
