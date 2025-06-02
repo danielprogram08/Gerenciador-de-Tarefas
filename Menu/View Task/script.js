@@ -54,6 +54,7 @@ window.EditTask = EditTask;
 
 function DeleteTask() {
     const StringTask = localStorage.getItem("Task");
+
     if (StringTask) {
         localStorage.removeItem("Task");
         location.reload();

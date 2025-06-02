@@ -1,0 +1,17 @@
+.CardSucess, .CardAlert {
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    background-color: #3ee3f9;
+    position: fixed;
+    top: -100px;
+    transition: top 1.0s ease-in-out;
+}
+
+.CardAlert {
+    background-color: red;
+    color: white;
+}

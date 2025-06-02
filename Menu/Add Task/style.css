@@ -10,7 +10,7 @@ body {
     flex-direction: column;
 }
 
-header, .CardSucess, .CardAlert {
+header {
     background-color: #0040ff;
     width: 50%;
     align-items: center;
@@ -18,19 +18,6 @@ header, .CardSucess, .CardAlert {
     display: flex;
     border-radius: 10px;
     margin-bottom: 3%;
-}
-
-.CardSucess, .CardAlert {
-    width: 30%;
-    background-color: #3ee3f9;
-    position: fixed;
-    top: -100px;
-    transition: top 1.0s ease-in-out;
-}
-
-.CardAlert {
-    background-color: red;
-    color: white;
 }
 
 nav {

@@ -41,7 +41,7 @@ input::placeholder {
     opacity: 0.4;
 }
 
-#datetime {
+#NewDateTime {
     background: none;
     color: white;
     font-weight: bold;
@@ -49,11 +49,11 @@ input::placeholder {
     transition: background-color linear 0.2s;
 }
 
-#datetime:hover {
+#NewDateTime:hover {
     background-color: #3ee3f9;
 }
 
-#description {
+#NewDescription {
     height: 70px;
     width: 350px;
     border: none;
@@ -105,7 +105,7 @@ button:hover {
         font-size: x-small;
     }
 
-    #description {
+    #NewDescription {
         width: 205px;
     }
 }
