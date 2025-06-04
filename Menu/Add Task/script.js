@@ -4,23 +4,41 @@ function Return() {
     window.location.href = '../index.html';
 }
 
-function AddTask() {
+export function AddTask() {
+
     let title = document.getElementById("title").value;
     let term = document.getElementById("datetime").value;
     let description = document.getElementById("description").value;
+    const key = "Key-Application";
+    const task = {
+        Title: title,
+        Term: term,
+        Description: description
+    };
 
-    if (title == "" && term == "" && description == "" || title == "" || term == "" || description == "") {
+    if (!title || !term || !description) {
         CardAlert();
     } else {
-        const task = {
-            Title: title,
-            Term: term,
-            Description: description
-        };
-    
-        const json = JSON.stringify(task);
-    
-        localStorage.setItem("Task", json);
+
+        //Criando lista para armazenar as tarefas e verificando tarefas existentes; 
+        let tasklist = [];
+        const StorageTasks = localStorage.getItem(key);
+        if (StorageTasks) {
+            try {
+                tasklist = JSON.parse(StorageTasks);
+                if (!Array.isArray(tasklist)) {
+                    tasklist = [];
+                }
+            } catch (error) {
+                console.error("Erro ao tentar converter ")
+                tasklist = [];
+            }
+        }
+        
+        //Adicionando nova tarefa;
+        tasklist.push(task);
+        localStorage.setItem(key, JSON.stringify(tasklist));
+
         clear();
         CardSucess();
     }
