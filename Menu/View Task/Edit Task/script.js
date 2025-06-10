@@ -3,27 +3,22 @@ import { CardAlert, CardSucess } from "../../../Alert-Cards/Alerts.js";
 function Return() {
     window.location.href = '../index.html';
 }
+
 window.Return = Return;
 
 function EditTask() {
+    
     let NewTitle = document.getElementById("NewTitle").value;
     let NewTerm = document.getElementById("NewDateTime").value;
     let NewDescription = document.getElementById("NewDescription").value;
+    const EditTask = JSON.parse(localStorage.getItem("EditApplication-Key"));
+    const Task = JSON.parse(localStorage.getItem("Key-Application"));
 
-    if (NewTitle == "" && NewTerm == "" && NewDescription == "" || NewTitle == "" || NewTerm == "" || NewDescription == "") {
+    if (!NewTitle || !NewTerm || !NewDescription) {
         CardAlert();
     } else {
-        const task = {
-            Title: NewTitle,
-            Term: NewTerm,
-            Description: NewDescription
-        };
-    
-        const json = JSON.stringify(task);
-    
-        localStorage.setItem("Task", json);
-        clear();
-        CardSucess();
+        const Object = Task.find(task => task.Id == EditTask.Id);
+        if (Object) { clear(); CardSucess(); console.log(Object)}
     }
 }
 window.EditTask = EditTask;

@@ -4,16 +4,19 @@ function Return() {
     window.location.href = '../index.html';
 }
 
-export function AddTask() {
+function AddTask() {
 
     let title = document.getElementById("title").value;
     let term = document.getElementById("datetime").value;
     let description = document.getElementById("description").value;
+    let id = Date.now();
+
     const key = "Key-Application";
     const task = {
         Title: title,
         Term: term,
-        Description: description
+        Description: description,
+        Id: id
     };
 
     if (!title || !term || !description) {

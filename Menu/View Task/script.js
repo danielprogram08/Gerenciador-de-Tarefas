@@ -21,15 +21,25 @@ function ViewTask() {
                     <p id="description">${task.Description}</p>
                 </div>
                 <div class="buttons">
-                    <div id="edit-button">
+                    <button onclick="EditTask()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
-                    </div>
-                    <div id="delete-button">
+                    </button>
+                    <button id="delete-button">
                         <img id="delete-img" src="../../Icons/delete_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
-                    </div>
+                    </button>
                 </div>
             `;
+
         document.body.appendChild(Tasks);
+        
+        const taskEditKey = "EditApplication-Key";
+        
+        Tasks.addEventListener("mouseover", function (event) {
+            const HoveredElement = event.target.closest("#title");
+            if (!HoveredElement) { return; }
+            localStorage.setItem(taskEditKey, JSON.stringify(task));
+        });
+
         });
 
         const ButtonReturn = document.createElement("div");
@@ -58,16 +68,7 @@ function EditTask() {
 
 window.EditTask = EditTask;
 
-function DeleteTask() {
-    const StringTask = localStorage.getItem("Task");
-
-    if (StringTask) {
-        localStorage.removeItem("Task");
-        location.reload();
-    } else {
-        console.error("Erro ao buscar tarefa!");
-    }
-}
+function DeleteTask() {}
 
 window.DeleteTask = DeleteTask;
 
