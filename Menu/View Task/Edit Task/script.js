@@ -18,7 +18,14 @@ function EditTask() {
         CardAlert();
     } else {
         const Object = Task.find(task => task.Id == EditTask.Id);
-        if (Object) { clear(); CardSucess(); console.log(Object)}
+        if (Object) {
+            Object.Title = NewTitle;
+            Object.Term = NewTerm;
+            Object.Description = NewDescription;
+            clear();
+            CardSucess();
+            console.log(Object);
+        }
     }
 }
 window.EditTask = EditTask;
