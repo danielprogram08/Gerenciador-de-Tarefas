@@ -17,14 +17,14 @@ function EditTask() {
     if (!NewTitle || !NewTerm || !NewDescription) {
         CardAlert();
     } else {
-        const Object = Task.find(task => task.Id == EditTask.Id);
-        if (Object) {
-            Object.Title = NewTitle;
-            Object.Term = NewTerm;
-            Object.Description = NewDescription;
+        const EditedTask = Task.find(task => task.Id == EditTask.Id);
+        if (EditedTask) {
+            Task.splice(EditedTask, 1);
+            console.log(Task);
             clear();
             CardSucess();
-            console.log(Object);
+        } else {
+            console.error("Erro ao Editar Tarefa!");
         }
     }
 }

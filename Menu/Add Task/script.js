@@ -23,7 +23,7 @@ function AddTask() {
         CardAlert();
     } else {
 
-        //Criando lista para armazenar as tarefas e verificando tarefas existentes; 
+        //Verificando tarefas existentes; 
         let tasklist = [];
         const StorageTasks = localStorage.getItem(key);
         if (StorageTasks) {
