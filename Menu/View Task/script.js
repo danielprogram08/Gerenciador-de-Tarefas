@@ -1,10 +1,14 @@
+import { DeleteTask } from "./Delete Task/script.js";
+
 function ViewTask() {
 
     let tasklist = localStorage.getItem("Key-Application");
     let Tasks = JSON.parse(tasklist);
 
     if (tasklist) {
+
         Tasks.forEach(task => {
+            
             const Tasks = document.createElement("div");
             const term = task.Term;
             const parts = term.split('T');
@@ -24,7 +28,7 @@ function ViewTask() {
                     <button onclick="EditTask()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
-                    <button id="delete-button">
+                    <button onclick="DeleteTask()" id="delete-button">
                         <img id="delete-img" src="../../Icons/delete_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
                 </div>
@@ -62,15 +66,14 @@ function ViewTask() {
 
 ViewTask();
 
+window.DeleteTask = DeleteTask;
+window.ViewTask = ViewTask;
+
 function EditTask() {
     window.location.href = './Edit Task/index.html';
 }
 
 window.EditTask = EditTask;
-
-function DeleteTask() {}
-
-window.DeleteTask = DeleteTask;
 
 function Return () {
     window.location.href = '../index.html';
