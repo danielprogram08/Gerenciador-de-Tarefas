@@ -13,16 +13,41 @@ function EditTask() {
     let NewDescription = document.getElementById("NewDescription").value;
     const EditTask = JSON.parse(localStorage.getItem("EditApplication-Key"));
     const Task = JSON.parse(localStorage.getItem("Key-Application"));
+    const KeyApplication = "Key-Application";
 
     if (!NewTitle || !NewTerm || !NewDescription) {
         CardAlert();
     } else {
+
+        //Adicionando outras tarefas a lista;
+        let tasklist = [];
+
+        try {
+            tasklist = Task;
+            if (!Array.isArray(tasklist)) {
+                tasklist = [];
+            }
+        } catch (error) {
+            console.error(error);
+            tasklist = [];
+        }
+        
         const EditedTask = Task.find(task => task.Id == EditTask.Id);
+
         if (EditedTask) {
+
+            //Editando tarefa e atualizando o localstorage;
             Task.splice(EditedTask, 1);
-            console.log(Task);
+            EditTask.Title = NewTitle;
+            EditTask.Term = NewTerm;
+            EditTask.Description = NewDescription;
+            
+            tasklist.push(EditTask);
+            localStorage.setItem(KeyApplication, JSON.stringify(tasklist));
+
             clear();
             CardSucess();
+            
         } else {
             console.error("Erro ao Editar Tarefa!");
         }
