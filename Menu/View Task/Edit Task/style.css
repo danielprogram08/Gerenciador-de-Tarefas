@@ -98,7 +98,21 @@ button:hover {
     transform: scale(1.1);
 }
 
-@media (min-width: 340px) and (max-width: 440px) {
+@media (max-width: 345px) {
+    header {
+        font-size: 10px;
+    }
+
+    nav {
+        font-size: 10px;
+    }
+
+    #NewDescription {
+        width: 205px;
+    }
+}
+
+@media (min-width: 345px) and (max-width: 440px) {
     header {
         margin-top: 10%;
         font-size: x-small;

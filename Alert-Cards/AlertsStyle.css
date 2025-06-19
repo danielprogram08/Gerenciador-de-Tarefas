@@ -1,5 +1,5 @@
 .CardSucess, .CardAlert {
-    width: 30%;
+    width: 70%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -14,4 +14,22 @@
 .CardAlert {
     background-color: red;
     color: white;
+}
+
+@media (max-width: 500px) {
+    .CardSucess, .CardAlert {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 1000px) {
+    .CardSucess, .CardAlert {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1130px) {
+    .CardSucess, .CardAlert {
+        font-size: 20px;
+    }
 }

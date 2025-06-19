@@ -104,11 +104,33 @@ h1 {
     font-size: 35px;
 }
 
-@media (min-width: 360px) and (max-width: 1080px) {
+@media (max-width: 430px) {
     header {
+        font-size: 12px;
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .tasks {
+        position: relative;
+        width: 90%;
+    }
+
+    .titles {
+        font-size: 9px;
+        width: 65%;
+    }
+
+    .buttons {
+        width: 10%;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 1000px) {
+    header {
+        width: 90%;
         margin-top: 10px;
         padding: 5px;
-        font-size: 15px;
     }
 
     .tasks {
@@ -117,12 +139,19 @@ h1 {
     }
 
     .titles {
-        font-size: 10px;
-        width: 50%;
+        font-size: 13px;
+        width: 60%;
     }
 
     .buttons {
         position: absolute;
         right: 5px;
     }   
+}
+
+@media (min-width: 1000px) and (max-width: 1300px) {
+    .titles {
+        width: 60%;
+        font-size: 12px;
+    }
 }
