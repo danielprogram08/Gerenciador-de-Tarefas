@@ -19,11 +19,17 @@ function ViewTask() {
 
             Tasks.className = "tasks";
             Tasks.innerHTML = `
+                <label class="checkbox-container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+
                 <div class="titles">
                     <h1 id="title">${task.Title}</h1>
                     <p id="term">𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}</p>
                     <p id="description">${task.Description}</p>
                 </div>
+                
                 <div class="buttons">
                     <button onclick="EditTask()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
