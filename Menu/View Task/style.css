@@ -35,11 +35,13 @@ header {
     transform: scale(1.1);
 }
 
+/*Caixa de Marcação*/
 .checkbox-container {
+    display: block;
     position: relative;
     padding-left: 10px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-bottom: 12px;
     cursor: pointer;
     font-size: 18px;
     -webkit-user-select: none;
@@ -48,14 +50,16 @@ header {
     user-select: none;
 }
 
+/*Caixa de Marcação Padrão*/
 .checkbox-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
     width: 0;
+    height: 0;
 }
 
+/*Marcador*/
 .checkmark {
     position: absolute;
     top: 0;
@@ -64,22 +68,39 @@ header {
     width: 35px;
     background-color: none;
     border: 1px solid #ccc;
-    transition: background-color 0.2s;
     border-radius: 5px;
+    transition: background-color 0.2s;
 }
 
+/*Caixa de Marcação Marcada*/
 .checkbox-container:hover input ~ .checkmark {
-    background-color: #3ee3f9;
+    background-color: #00c3ff;
 }
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: #3ee3f9;
+    background-color: #00c3ff;
 }
 
-.checkmark::after {
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark::after {
+    left: 9px;
+    top: 3px;
+    width: 12px;
+    height: 20px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .titles {

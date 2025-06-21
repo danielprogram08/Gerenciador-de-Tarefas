@@ -20,7 +20,7 @@ function ViewTask() {
             Tasks.className = "tasks";
             Tasks.innerHTML = `
                 <label class="checkbox-container">
-                    <input type="checkbox" checked="checked">
+                    <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
 
