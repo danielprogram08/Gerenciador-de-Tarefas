@@ -20,7 +20,7 @@ function ViewTask() {
             Tasks.className = "tasks";
             Tasks.innerHTML = `
                 <label class="checkbox-container">
-                    <input type="checkbox">
+                    <input type="checkbox" id="checkbox-${task.Id}">
                     <span class="checkmark"></span>
                 </label>
 
@@ -40,15 +40,27 @@ function ViewTask() {
                 </div>
             `;
 
-        document.body.appendChild(Tasks);
-        
-        const taskEditKey = "EditApplication-Key";
-        
-        Tasks.addEventListener("mouseover", function (event) {
-            const HoveredElement = event.target.closest("#title");
-            if (!HoveredElement) { return; }
-            localStorage.setItem(taskEditKey, JSON.stringify(task));
-        });
+            document.body.appendChild(Tasks);
+            
+            const taskEditKey = "EditApplication-Key";
+            
+            Tasks.addEventListener("mouseover", function (event) {
+                const HoveredElement = event.target.closest("#title");
+                if (!HoveredElement) { return; }
+                localStorage.setItem(taskEditKey, JSON.stringify(task));
+            });
+
+            const checkbox = Tasks.querySelector(`#checkbox-${task.Id}`);
+
+            if (checkbox) {
+                checkbox.addEventListener("change", function (event) {
+                    const checkboxMarked = event.target.checked;
+                    if (checkboxMarked) { Tasks.style.borderColor = 'green';} 
+                    else { Tasks.style.borderColor = '#00c3ff';}
+                });
+            } else {
+                console.error("Elemento não encontrado!");
+            }
 
         });
 
