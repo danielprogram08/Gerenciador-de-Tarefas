@@ -55,8 +55,17 @@ function ViewTask() {
             if (checkbox) {
                 checkbox.addEventListener("change", function (event) {
                     const checkboxMarked = event.target.checked;
-                    if (checkboxMarked) { Tasks.style.borderColor = 'green';} 
-                    else { Tasks.style.borderColor = '#00c3ff';}
+                    const term = Tasks.querySelector(`#term`);
+
+                    if (checkboxMarked) { 
+                        Tasks.style.borderColor = 'green';    
+                        term.textContent = `Concluído!`;
+                        term.style.color = `green`;
+                    } else { 
+                        Tasks.style.borderColor = '#00c3ff';
+                        term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
+                        term.style.color = 'white';
+                    }
                 });
             } else {
                 console.error("Elemento não encontrado!");
