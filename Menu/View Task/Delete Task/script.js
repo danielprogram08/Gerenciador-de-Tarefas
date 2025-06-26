@@ -1,30 +1,25 @@
-export function DeleteTask() {
+export function Delete() {
 
-    const DeleteTask = JSON.parse(localStorage.getItem("EditApplication-Key"));
-    const Task = JSON.parse(localStorage.getItem("Key-Application"));
+    const TaskToDelete = JSON.parse(localStorage.getItem("EditApplication-Key"));
+    let Tasks = JSON.parse(localStorage.getItem("Key-Application"));
     const KeyApplication = "Key-Application";
 
-    //Adicionando outras tarefas a lista;
-    let tasklist = [];
+    // Verificando a Lista de Tarefas se é um Array válido;
+    if (!Array.isArray(Tasks)) {
+        console.error(Tasks + " não é um Array.");
+        Tasks = [];
 
-    try {
-        tasklist = Task;
-        if (!Array.isArray(tasklist)) {
-            tasklist = [];
-        }
-    } catch (error) {
-        console.error(error);
-        tasklist = [];
-    }
-
-    const DeletedTask = Task.find(task => task.Id == DeleteTask.Id);
-
-    //Deletando tarefa e atualizando o localstorage;
-    if (DeletedTask) {
-        tasklist.splice(DeletedTask, 1);
-        localStorage.setItem(KeyApplication, JSON.stringify(tasklist));
-        window.location.reload();
     } else {
-        console.error("Erro ao encontrar tarefa");
+
+        // Deletando a tarefa e atualizando o localstorage;
+        const IndexToDeleted = Tasks.findIndex(task => task.Id == TaskToDelete.Id);
+        if (IndexToDeleted != -1) {
+            Tasks.splice(IndexToDeleted, 1);
+            localStorage.setItem(KeyApplication, JSON.stringify(Tasks));
+            window.location.reload();
+
+        } else {
+            console.error("Tarefa não encontrada!");
+        }
     }
 }

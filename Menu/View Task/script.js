@@ -1,4 +1,4 @@
-import { DeleteTask } from "./Delete Task/script.js";
+import { Delete } from "./Delete Task/script.js";
 
 function ViewTask() {
 
@@ -34,13 +34,21 @@ function ViewTask() {
                     <button onclick="EditTask()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
-                    <button onclick="DeleteTask()" id="delete-button">
+                    <button onclick="Delete()" id="delete-button">
                         <img id="delete-img" src="../../Icons/delete_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
                 </div>
             `;
 
             document.body.appendChild(Tasks);
+
+            const DateNow = new Date();
+            const Term = Tasks.querySelector(`#term`);
+
+            if (DateNow > date) {
+                Tasks.style.borderColor = 'red';
+                Term.style.color = 'red';
+            }
             
             const taskEditKey = "EditApplication-Key";
             
@@ -53,20 +61,25 @@ function ViewTask() {
             const checkbox = Tasks.querySelector(`#checkbox-${task.Id}`);
 
             if (checkbox) {
+                
                 checkbox.addEventListener("change", function (event) {
                     const checkboxMarked = event.target.checked;
-                    const term = Tasks.querySelector(`#term`);
 
                     if (checkboxMarked) { 
-                        Tasks.style.borderColor = 'green';    
-                        term.textContent = `Concluído!`;
-                        term.style.color = `green`;
+                        Tasks.style.borderColor = 'green'; 
+                        Term.textContent = `𝗖𝗼𝗻𝗰𝗹𝘂í𝗱𝗼!`;
+                        Term.style.color = `green`;
+                    } else if (DateNow > date) {
+                        Tasks.style.borderColor = 'red';
+                        Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
+                        Term.style.color = 'red';
                     } else { 
                         Tasks.style.borderColor = '#00c3ff';
                         term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
                         term.style.color = 'white';
                     }
                 });
+
             } else {
                 console.error("Elemento não encontrado!");
             }
@@ -93,7 +106,7 @@ function ViewTask() {
 
 ViewTask();
 
-window.DeleteTask = DeleteTask;
+window.Delete = Delete;
 window.ViewTask = ViewTask;
 
 function EditTask() {

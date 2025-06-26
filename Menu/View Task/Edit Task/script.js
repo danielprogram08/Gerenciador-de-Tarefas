@@ -6,7 +6,7 @@ function Return() {
 
 window.Return = Return;
 
-function EditTask() {
+function Edit() {
     
     let NewTitle = document.getElementById("NewTitle").value;
     let NewTerm = document.getElementById("NewDateTime").value;
@@ -53,7 +53,7 @@ function EditTask() {
         }
     }
 }
-window.EditTask = EditTask;
+window.Edit = Edit;
 
 function clear() {
     document.getElementById("NewTitle").value = '';
