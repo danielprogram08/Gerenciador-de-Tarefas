@@ -1,13 +1,17 @@
 import { CardSucess, CardAlert } from "../../Alert-Cards/Alerts.js";
 
+// Retornar a página inicial
 function Return() {
     window.location.href = '../index.html';
 }
 
-function AddTask() {
+// Adicionar Tarefa
+function Add() {
 
     let title = document.getElementById("title").value;
     let term = document.getElementById("datetime").value;
+    const DateTerm = new Date(term);
+    const date = new Date();
     let description = document.getElementById("description").value;
     let id = Date.now();
 
@@ -19,11 +23,16 @@ function AddTask() {
         Id: id
     };
 
-    if (!title || !term || !description) {
+    console.log(DateTerm);
+
+    // Verificação dos campos e data válida
+    if (!title || !term || !description || DateTerm < date) {
+
         CardAlert();
+
     } else {
 
-        //Verificando tarefas existentes; 
+        // Verificando tarefas existentes e adicionando ao Array; 
         let tasklist = [];
         const StorageTasks = localStorage.getItem(key);
         if (StorageTasks) {
@@ -38,7 +47,7 @@ function AddTask() {
             }
         }
         
-        //Adicionando nova tarefa;
+        // Adicionando nova tarefa ao Array e ao localStorage;
         tasklist.push(task);
         localStorage.setItem(key, JSON.stringify(tasklist));
 
@@ -47,6 +56,7 @@ function AddTask() {
     }
 }
 
+// Apagar todos os campos
 function clear() {
     document.getElementById("title").value = '';
     document.getElementById("datetime").value = '';
@@ -54,4 +64,4 @@ function clear() {
 }
 
 window.Return = Return;
-window.AddTask = AddTask;
+window.Add = Add;

@@ -6,20 +6,26 @@ function Return() {
 
 window.Return = Return;
 
+// Editar Tarefa
 function Edit() {
     
     let NewTitle = document.getElementById("NewTitle").value;
     let NewTerm = document.getElementById("NewDateTime").value;
+    const DateTerm = new Date(NewTerm);
+    const date = new Date();
     let NewDescription = document.getElementById("NewDescription").value;
     const EditTask = JSON.parse(localStorage.getItem("EditApplication-Key"));
     const Task = JSON.parse(localStorage.getItem("Key-Application"));
     const KeyApplication = "Key-Application";
 
-    if (!NewTitle || !NewTerm || !NewDescription) {
+    // Validação dos campos e data válida
+    if (!NewTitle || !NewTerm || !NewDescription || DateTerm < date) {
+
         CardAlert();
+        
     } else {
 
-        //Adicionando outras tarefas a lista;
+        // Adicionando tarefas existentes ao Array
         let tasklist = [];
 
         try {
@@ -32,11 +38,11 @@ function Edit() {
             tasklist = [];
         }
         
+        // Editando tarefa e atualizando o localstorage
         const EditedTask = Task.find(task => task.Id == EditTask.Id);
 
         if (EditedTask) {
 
-            //Editando tarefa e atualizando o localstorage;
             Task.splice(EditedTask, 1);
             EditTask.Title = NewTitle;
             EditTask.Term = NewTerm;
@@ -53,6 +59,7 @@ function Edit() {
         }
     }
 }
+
 window.Edit = Edit;
 
 function clear() {

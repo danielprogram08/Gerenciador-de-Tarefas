@@ -1,5 +1,6 @@
 import { Delete } from "./Delete Task/script.js";
 
+// Exibindo todas as Tarefas
 function ViewTask() {
 
     let tasklist = localStorage.getItem("Key-Application");
@@ -31,7 +32,7 @@ function ViewTask() {
                 </div>
                 
                 <div class="buttons">
-                    <button onclick="EditTask()" id="edit-button">
+                    <button onclick="Edit()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
                     <button onclick="Delete()" id="delete-button">
@@ -42,6 +43,7 @@ function ViewTask() {
 
             document.body.appendChild(Tasks);
 
+            // Comparação da data atual com prazo da tarefa e implementação da lógica de negócio
             const DateNow = new Date();
             const Term = Tasks.querySelector(`#term`);
 
@@ -50,6 +52,7 @@ function ViewTask() {
                 Term.style.color = 'red';
             }
             
+            // Adicionando tarefa selecionada para o localstorage responsável por tarefas a editar
             const taskEditKey = "EditApplication-Key";
             
             Tasks.addEventListener("mouseover", function (event) {
@@ -58,34 +61,30 @@ function ViewTask() {
                 localStorage.setItem(taskEditKey, JSON.stringify(task));
             });
 
+            // Verificação de CheckBox e validando a tarefa selecionada
             const checkbox = Tasks.querySelector(`#checkbox-${task.Id}`);
-
-            if (checkbox) {
                 
-                checkbox.addEventListener("change", function (event) {
-                    const checkboxMarked = event.target.checked;
+            checkbox.addEventListener("change", function (event) {
+                const checkboxMarked = event.target.checked;
 
-                    if (checkboxMarked) { 
-                        Tasks.style.borderColor = 'green'; 
-                        Term.textContent = `𝗖𝗼𝗻𝗰𝗹𝘂í𝗱𝗼!`;
-                        Term.style.color = `green`;
-                    } else if (DateNow > date) {
-                        Tasks.style.borderColor = 'red';
-                        Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
-                        Term.style.color = 'red';
-                    } else { 
-                        Tasks.style.borderColor = '#00c3ff';
-                        term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
-                        term.style.color = 'white';
-                    }
-                });
-
-            } else {
-                console.error("Elemento não encontrado!");
-            }
+                if (checkboxMarked) { 
+                    Tasks.style.borderColor = 'green'; 
+                    Term.textContent = `𝗖𝗼𝗻𝗰𝗹𝘂í𝗱𝗼!`;
+                    Term.style.color = `green`;
+                } else if (DateNow > date) {
+                    Tasks.style.borderColor = 'red';
+                    Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
+                    Term.style.color = 'red';
+                } else { 
+                    Tasks.style.borderColor = '#00c3ff';
+                    Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
+                    Term.style.color = 'white';
+                }
+            });
 
         });
 
+        // Botão de retorno à página inicial
         const ButtonReturn = document.createElement("div");
 
             ButtonReturn.className = "Btn-return";
@@ -109,11 +108,11 @@ ViewTask();
 window.Delete = Delete;
 window.ViewTask = ViewTask;
 
-function EditTask() {
+function Edit() {
     window.location.href = './Edit Task/index.html';
 }
 
-window.EditTask = EditTask;
+window.Edit = Edit;
 
 function Return () {
     window.location.href = '../index.html';

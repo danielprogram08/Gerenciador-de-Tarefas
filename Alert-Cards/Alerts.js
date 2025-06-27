@@ -1,4 +1,4 @@
-// Add Task;
+// Card -> Cadastrado com Sucesso!
 export function CardSucess() {
     const card = document.createElement("div");
 
@@ -19,11 +19,12 @@ export function CardSucess() {
     }, 3000);
 }
 
+// Card Alerta sobre os campos!
 export function CardAlert() {
     const alert = document.createElement("div");
 
     alert.className = "CardAlert";
-    alert.innerHTML = "<h2>Preencha todos os campos!</h2>";
+    alert.innerHTML = "<h2>Campos vazios ou data inválida. Tente novamente!</h2>";
 
     document.body.insertBefore(alert, document.body.firstChild);
 
