@@ -11,7 +11,6 @@ export function Delete() {
         Tasks = [];
 
     } else {
-
         // Deletando a tarefa e atualizando o localstorage
         const IndexToDeleted = Tasks.findIndex(task => task.Id == TaskToDelete.Id);
         if (IndexToDeleted != -1) {
