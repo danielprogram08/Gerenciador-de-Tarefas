@@ -79,7 +79,7 @@ header {
 }
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: #00c3ff;
+    background-color: #00FF00;
 }
 
 .checkmark:after {

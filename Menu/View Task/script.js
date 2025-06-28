@@ -55,7 +55,7 @@ function ViewTask() {
             // Adicionando tarefa selecionada para o localstorage responsável por tarefas a editar
             const taskEditKey = "EditApplication-Key";
             
-            Tasks.addEventListener("mouseover", function (event) {
+            Tasks.addEventListener("mouseover", (event) => {
                 const HoveredElement = event.target.closest("#title");
                 if (!HoveredElement) { return; }
                 localStorage.setItem(taskEditKey, JSON.stringify(task));
@@ -64,13 +64,13 @@ function ViewTask() {
             // Verificação de CheckBox e validando a tarefa selecionada
             const checkbox = Tasks.querySelector(`#checkbox-${task.Id}`);
                 
-            checkbox.addEventListener("change", function (event) {
+            checkbox.addEventListener("change", (event) => {
                 const checkboxMarked = event.target.checked;
 
                 if (checkboxMarked) { 
-                    Tasks.style.borderColor = 'green'; 
+                    Tasks.style.borderColor = '#00FF00'; 
                     Term.textContent = `𝗖𝗼𝗻𝗰𝗹𝘂í𝗱𝗼!`;
-                    Term.style.color = `green`;
+                    Term.style.color = `#00FF00`;
                 } else if (DateNow > date) {
                     Tasks.style.borderColor = 'red';
                     Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;

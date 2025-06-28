@@ -1,4 +1,4 @@
-.CardSucess, .CardAlert {
+.CardSucess, .CardAlert, .CardDelete {
     width: 70%;
     align-items: center;
     justify-content: center;
@@ -11,9 +11,27 @@
     transition: top 1.0s ease-in-out;
 }
 
-.CardAlert {
+.CardAlert, .CardDelete {
     background-color: red;
     color: white;
+}
+
+.CardDelete {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    #buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: 30%;
+
+        #NoButton {
+            margin-left: 50%;
+        }
+    }
 }
 
 @media (max-width: 500px) {
