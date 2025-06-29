@@ -12,7 +12,7 @@
 }
 
 .CardAlert, .CardDelete {
-    background-color: red;
+    background-color: rgb(255, 85, 85);
     color: white;
 }
 
@@ -20,6 +20,8 @@
     width: 50%;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: -200px;
 
     #buttons {
         display: flex;
@@ -28,9 +30,34 @@
         margin: 10px;
         width: 30%;
 
-        #NoButton {
-            margin-left: 50%;
+        #NoButton, #YesButton {
+            margin-left: 30%;
+            background-color: red;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all linear 0.2s;
         }
+
+        #NoButton:hover, #YesButton:hover {
+            transform: scale(1.2);
+            background-color: rgb(255, 134, 134);
+        }
+
+        #YesButton {
+            background-color: blue;
+            margin-left: 0;
+            margin-right: 30%;
+        }
+
+        #YesButton:hover {
+            background-color: #3ee3f9;
+        }
+
     }
 }
 

@@ -43,13 +43,17 @@ function ViewTask() {
 
             document.body.appendChild(Tasks);
 
-            // Comparação da data atual com prazo da tarefa e implementação da lógica de negócio
+            // Comparação da data e hora atuais com prazo da tarefa e implementação da lógica de negócio
             const DateNow = new Date();
+            const ValidationTerm = new Date(term);
             const Term = Tasks.querySelector(`#term`);
 
-            if (DateNow > date) {
+            if (DateNow > ValidationTerm || ValidationTerm == DateNow) {
                 Tasks.style.borderColor = 'red';
                 Term.style.color = 'red';
+            } else {
+                Tasks.style.borderColor = '#00c3ff';
+                Term.style.color = 'white';
             }
             
             // Adicionando tarefa selecionada para o localstorage responsável por tarefas a editar

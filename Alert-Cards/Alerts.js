@@ -67,7 +67,7 @@ export function CardAlertDelete() {
 
     RemoveCard.addEventListener("click", () => {
         setTimeout(() => {
-            alert.style.top = "-100px"
+            alert.style.top = "-200px"
             setTimeout(() => {
                 alert.remove();
             }, 1000);
