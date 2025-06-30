@@ -9,6 +9,7 @@
     position: fixed;
     top: -100px;
     transition: top 1.0s ease-in-out;
+    z-index: 100;
 }
 
 .CardAlert, .CardDelete {
