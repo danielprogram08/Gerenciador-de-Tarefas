@@ -45,7 +45,11 @@ export function CardAlert() {
 }
 
 // Card -> Alerta de Exclusão de Tarefa!
-export function CardAlertDelete() {
+export function CardAlertDelete(element) {
+
+    // Desabilitando o botão de excluir tarefa
+    element.disabled = true;
+
     const alert = document.createElement("div");
 
     alert.className = "CardDelete";
@@ -66,13 +70,17 @@ export function CardAlertDelete() {
     const RemoveCard = alert.querySelector("#NoButton");
 
     RemoveCard.addEventListener("click", () => {
+
+        // Habilitando o botão de exlcuir tarefas;
+        element.disabled = false;
+
         setTimeout(() => {
             alert.style.top = "-200px"
             setTimeout(() => {
                 alert.remove();
             }, 1000);
         }, 500);
-    }, {once: true});
+    });
 }
 
 window.Delete = Delete;

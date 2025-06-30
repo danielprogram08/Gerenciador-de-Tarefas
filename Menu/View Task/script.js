@@ -35,7 +35,7 @@ function ViewTask() {
                     <button onclick="Edit()" id="edit-button">
                         <img id="edit-img" src="../../Icons/edit_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
-                    <button onclick="CardAlertDelete()" id="delete-button">
+                    <button onclick="CardAlertDelete(this)" id="delete-button">
                         <img id="delete-img" src="../../Icons/delete_16dp_E3E3E3_FILL0_wght400_GRAD0_opsz20.png">
                     </button>
                 </div>
