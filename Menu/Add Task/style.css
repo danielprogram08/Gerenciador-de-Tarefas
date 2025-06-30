@@ -99,12 +99,14 @@ p {
     transform: scale(1.1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 520px) {
     header {
-        padding-left: 30px;
+        width: 90%;
+        font-size: 10px;
     }
 
-    #description {
-        width: 175px;
+    nav {
+        width: 70%;
+        font-size: 13px;
     }
 }
