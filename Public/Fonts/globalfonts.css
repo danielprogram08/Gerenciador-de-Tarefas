@@ -1,0 +1,15 @@
+/*Fonte Cursiva*/
+@font-face {
+    font-family: 'Cursive-Dancing';
+    src: url(./Dancing-Script/Dancing_Script/static/DancingScript-Medium.ttf);
+    font-size: 400px;
+    font-style: normal;
+}
+
+/*Fonte Especializada*/
+@font-face {
+    font-family: 'Especial-Lobster';
+    src: url(./Arvo/Arvo,Dancing_Script,Lilita_One,Lobster,Passion_One,etc/Lobster/Lobster-Regular.ttf);
+    font-size: 400px;
+    font-style: normal;
+}

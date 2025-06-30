@@ -1,3 +1,4 @@
+/*Fontes Globais*/
 body {
     margin: 0;
     padding: 0;
@@ -66,7 +67,7 @@ footer {
     align-items: center;
     justify-content: center;
     display: flex;
-    font-family: "Dancing Script", cursive;
+    font-family: "Cursive-Dancing", cursive;
     font-weight: 400;
     font-style: normal;
     margin-top: 5%;
