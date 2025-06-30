@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/Public/(.*)",
+      "dest": "/Public/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Menu/$1"
+    }
+  ]
+}
