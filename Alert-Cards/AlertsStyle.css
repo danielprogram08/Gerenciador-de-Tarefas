@@ -62,19 +62,22 @@
 }
 
 @media (max-width: 500px) {
-    .CardSucess, .CardAlert {
-        font-size: 10px;
+    .CardSucess, .CardAlert, .CardDelete {
+        font-size: 8px;
+        width: 90%;
     }
 }
 
 @media (min-width: 431px) and (max-width: 1000px) {
-    .CardSucess, .CardAlert {
+    .CardSucess, .CardAlert, .CardDelete {
         font-size: 12px;
+        width: 90%;
     }
 }
 
-@media (min-width: 700px) and (max-width: 1130px) {
-    .CardSucess, .CardAlert {
-        font-size: 20px;
+@media (min-width: 1000px) and (max-width: 1130px) {
+    .CardSucess, .CardAlert, .CardDelete {
+        font-size: 12px;
+        width: 90%;
     }
 }
