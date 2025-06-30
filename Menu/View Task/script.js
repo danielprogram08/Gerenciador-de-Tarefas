@@ -75,7 +75,7 @@ function ViewTask() {
                     Tasks.style.borderColor = '#00FF00'; 
                     Term.textContent = `𝗖𝗼𝗻𝗰𝗹𝘂í𝗱𝗼!`;
                     Term.style.color = `#00FF00`;
-                } else if (DateNow > date) {
+                } else if (DateNow > ValidationTerm || ValidationTerm == DateNow) {
                     Tasks.style.borderColor = 'red';
                     Term.textContent = `𝗣𝗿𝗮𝘇𝗼 𝗙𝗶𝗻𝗮𝗹: ${DateFormated} às ${time}`;
                     Term.style.color = 'red';
