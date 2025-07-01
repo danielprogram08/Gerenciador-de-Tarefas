@@ -92,7 +92,10 @@ function ViewTask() {
         const ButtonReturn = document.createElement("div");
 
             ButtonReturn.className = "Btn-return";
-            ButtonReturn.innerHTML = `<button id="btn-return" onclick="Return()">↩︎</button>`;
+            ButtonReturn.innerHTML = `
+            <button id="btn-return" onclick="Return()">
+                <img id="return-img" src="../../Public/Icons/keyboard_return_30dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png">
+            </button>`;
 
         document.body.appendChild(ButtonReturn);
 
@@ -101,7 +104,10 @@ function ViewTask() {
             const ButtonReturn = document.createElement("div");
 
                 ButtonReturn.className = "Btn-return";
-                ButtonReturn.innerHTML = `<button id="btn-return" onclick="Return()">↩︎</button>`;
+                ButtonReturn.innerHTML = `
+                <button id="btn-return" onclick="Return()">
+                    <img id="return-img" src="../../Public/Icons/keyboard_return_30dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png">
+                </button>`;
 
             document.body.appendChild(ButtonReturn);
         }
