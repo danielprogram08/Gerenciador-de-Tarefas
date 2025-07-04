@@ -3,12 +3,16 @@
 
 Este projeto trata-se de um gerenciador de tarefas criado com um propósito de auxiliar na organização das tarefas diárias ou mensais.
 
-<img src="./Public/Img-Readme/Pagina_Inicial.png" alt="pagina-inicial">
+<img src="./Public/Files-Readme/Pagina_Inicial.png" alt="pagina-inicial">
 <a href="https://lista-de-tarefas-chi-seven.vercel.app/">Sistema de Gerenciamento de Tarefas</a>
 
 ## Descrição
 
 Por mais simples que se possa parecer, a tecnologia por trás deste gerenciador é bastante facinante. Seu eficiente armazenamento através do navegador, permite que as tarefas cadastradas não sejam exclusas em caso de encerramento do navegador sem necessidade maior de um banco de dados para armazenar informações.
+
+## Documentação
+
+<a href="./Public/Files-Readme/Documentacao.pdf">Documentação Completa - Gerenciador de Tarefas</a>
 
 ## Tecnologias Utilizadas:
 
